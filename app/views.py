@@ -8,7 +8,7 @@ def homepage(request):
     if request.method == 'POST':
         name = request.POST['pname']
         amt = int(request.POST['pamt']) * 100
-        client = razorpay.Client(auth=("rzp_test_e8NTJnBYWuTCtM", "QtzHhrBJPXx9IWtrpUK6TZJP"))
+        client = razorpay.Client(auth=("Your_Razorpay_Key", "Your_Razorpay_Secret_Key"))
         data = { "amount": amt, "currency": "INR", "receipt": "order_rcptid_11" }
         payment = client.order.create(data=data)
         print(payment)
